@@ -1,0 +1,72 @@
+1. Login with own shell
+
+		env | grep SHELL
+2. Check all Shell Variables
+		env
+
+3. Write a script to cat either TestFile1 or TestFile2
+		./shellScript.sh 1
+
+4. Run a script to write integers 1 to 512 into number.txt
+		truncate --size=0 number.txt
+		./writeNumbers.sh
+		cat number.txt
+
+5. Take standard input from file
+		cat < number.txt
+
+6. Redirect stdout to test file
+		cat2 > newFile.txt
+		cat newFile.txt
+
+7. create dateu as alias for "date -u"
+		alias dateu="date -u"
+
+8. creat day as alias for "date +%A"
+		alias day="date +%A"
+
+9. create dus as alias for "du -s"
+		alias dus="du -s"
+
+10. Piping Commands
+		ls -l | grep num
+
+		cd ..
+		ls -l | less
+
+		ls -l | grep Mar > grepOutput.txt
+		ls
+		cat grepOutput.txt
+
+11. Redirection Commands
+		ls -l > inputFile.txt 
+		grep Mar < inputFile.txt > outputFile.txt
+
+12. Shell Editor : Store multiple lines in a buffer and execute all in one go
+		shell editor
+		ls -l\
+		| grep\
+		new\q
+
+13. Check "if" Syntax
+		if (( $a > $b )) echo $a fi
+		if (( $a > $b )) echo $a else echo $c else echo 5 fi
+
+14. Background Processes
+		ls -l &
+
+15. History Command to display command and time of execution
+		history
+
+16. Print files sorted according to inode modification time
+		ls -itime 
+
+17. Print files with zero file size
+		ls -z 
+
+18. ls command with Regex
+		ls *.txt
+		ls out*.txt
+
+
+
