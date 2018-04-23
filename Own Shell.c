@@ -475,9 +475,8 @@ void editor()
                   }
                   if(c != '\n')
                   {
-                        buf[i] = c;
+                        buf[i++] = c;
                   }
-                  i++;
             }
       }
       else
@@ -1033,14 +1032,19 @@ void sst_loop(void)
 {
         setenv("SHELL","/bin/ownsh",1);
         int status;
+       printf("************************\n\n");
         printf("Welcome to SST shell!\n");
+        printf("************************\n\n");
          time_t myTime;
 
         do 
         {
             char *line;
             char **args;
-            printf("~$ ");
+            char *buf = malloc(sizeof(char) * 100);
+            size_t size = 100;
+            getcwd(buf,size);
+            printf("%s~$ ",buf);
             line = sst_read_line();
             time(&myTime); //gets the current time
             char *t = (char*)malloc(sizeof(char)*200);
